@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Profile</title>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+</head>
+<body>
+
+<h2>Update Profile</h2>
+
+<form method="post" action="{% url 'update_profile' pk=profile.pk %}">
+
+    {% csrf_token %}
+    {{form.name|as_crispy_field}}
+
+    {{form.email|as_crispy_field}}
+
+    <input type="submit" value="Update">
+</form>
+
+
+
+
+<a href="{% url 'profile_list' %}">Back to Profile List</a>
+
+</body>
+</html> 

@@ -1,0 +1,20 @@
+<!-- complaint_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+  
+</head>
+<body>
+    <h1>Complaint Form</h1>
+    <form method="post"  class="container md3 col-4">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

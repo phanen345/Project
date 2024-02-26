@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Profile List</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="path/to/your/css/file.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+</head>
+<body>
+
+<div>
+    <h2>Profile List</h2>
+
+    {% for profile in profiles %}
+        <div class="profile-item row">
+            {{ profile.id }} - {{ profile.mobile }} - {{ profile.email }} - {{ profile.password }} - {{ profile.profile_type_id }} - {{ profile.designation_id }} - {{ profile.created_at }} - {{ profile.updated_at }}
+            <a href="{% url 'delete_profile' pk=profile.pk %}">Delete</a>
+        </div>
+    {% endfor %}
+
+    <a href="{% url 'create_profile' %}" class="create-button">Create Profile</a>
+</div>
+
+
+</body>
+</html>

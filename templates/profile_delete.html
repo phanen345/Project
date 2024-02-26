@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Profile</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+</head>
+
+<body>
+    <h2 class=" h1 mt-4 mb-4 text-center">Delete Profile</h2>
+    <p class="h3 text-center mt-5"> Are you sure you want to delete the profile of <span class="text-dark" >{{ profile.name }}</span>?</p>
+    <form method="post" action="{% url 'delete_profile' pk=profile.pk %}">
+        {% csrf_token %}
+        <div class="text-center">
+        <input  class=" btn btn-danger text-center mt-5 btn-hover-primary "  type="submit" value="Delete">
+        <a  class="btn btn-primary mt-5 btn-hover-primary" href="{% url 'complaint' %}">Cancel</a>
+        </div>
+    </form>
+    
+
+</body>
+</html>
